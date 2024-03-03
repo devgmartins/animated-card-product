@@ -1,0 +1,141 @@
+/*Fonts Import*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+/*Reset CSS*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--texts-color);
+}
+
+/*Root Sets*/
+:root{
+    --bg-color: #D9CdF7;
+    --texts-color: #271A45;
+}
+
+/*Body/All*/
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Lato', sans-serif;
+    font-weight: regular;
+    background: var(--bg-color);
+    display: grid;
+    place-content: center;
+}
+
+/*Image GIF*/
+#animated-view{
+    display: none;
+}
+
+/*Container*/
+#app{
+    display: flex;
+    align-items: center;
+}
+
+/*Image Static Container*/
+#image-wrapper{
+    width: fit-content;
+}
+
+#image-wrapper #static-view{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+#image-wrapper #static-view > img{
+    width: 449px;
+    height: 253px;
+    object-fit: cover;
+}
+
+#image-wrapper #static-view > button{
+    position: absolute;
+    right: 50px;
+    top: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/*Onclick animation CSS*/
+html.animated #image-wrapper #static-view > img,
+html.animated #image-wrapper #static-view > button{
+    display: none;
+}
+
+html.animated #image-wrapper #animated-view{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+html.animated #image-wrapper #animated-view > #animated{
+    width: 449px;
+    height: 253px;
+    object-fit: cover;
+}
+
+html.animated #image-wrapper #animated-view > #close{
+    position: absolute;
+    right: 50px;
+    top: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/*Informations*/
+#infos-wrapper{
+    margin-left: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#infos-wrapper #top > h2{
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+#infos-wrapper #main > h1{
+    font-family: "Crimson Pro", serif;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+#infos-wrapper #bottom > p{
+    font-weight: regular;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+/*Cart Button*/
+#infos-wrapper #cart-button > button{
+    background: none;
+    border: 1px solid var(--texts-color);
+    padding: 8px 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: regular;
+    border-radius: 999px;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+/*Animation hover Button*/
+#infos-wrapper #cart-button > button:hover{
+    background: var(--texts-color);
+    color: var(--bg-color);
+}
